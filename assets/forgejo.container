@@ -1,0 +1,44 @@
+[Unit]
+Description=Forgejo Container Service
+RequiresMountsFor=%t/containers
+
+[Container]
+# * Specify the name of the container.
+ContainerName=forgejo
+# * Specify the container image to use.
+Image=ghcr.io/han-rs/container-ci-forgejo:latest
+# * Automatically pull the latest image.
+AutoUpdate=registry
+# * Change the user namespace mode
+# * Don't modify this field unless you know what you're doing.
+UserNS=keep-id:uid=65532,gid=65532
+# * Use the host's network stack for better performance.
+# Network=host
+# * Publish ports from the container to the host.
+# *
+# * If Network=host is used, these options will be ignored.
+# * The format is [host_ip:]host_port:container_port[/protocol].
+# * Please set these according to what you configured.
+PublishPort=3000:3000
+PublishPort=8022:22
+# * Persist forgejo's custom files (e.g., custom configuration).
+Volume=%h/.local/share/forgejo/custom:/opt/forgejo/custom
+# * Persist forgejo's data (e.g., repositories, database, etc).
+Volume=%h/.local/share/forgejo/data:/opt/forgejo/data
+# * For git repositories.
+# *
+# * By default, the repositories will be stored in "/opt/forgejo/data/forgejo-repositories".
+# * You may want to change this path to a more suitable location on your host.
+# Volume=/data/git:/data/git
+# * Mount the cloudflared volume to share unix sockets.
+# Volume=cloudflared.volume:/opt/cloudflared/shared-volume
+
+[Service]
+# * Always restart the container if it stops (equivalent to unless-stopped).
+Restart=always
+# * Give the container more time to start.
+TimeoutStartSec=900
+
+[Install]
+# * Enable the service to start at boot.
+WantedBy=default.target
