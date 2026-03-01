@@ -9,6 +9,8 @@ ContainerName=forgejo
 Image=ghcr.io/han-rs/container-ci-forgejo:latest
 # * Automatically pull the latest image.
 AutoUpdate=registry
+# * For those processes which may fork new processes
+RunInit=true
 # * Change the user namespace mode
 # * Don't modify this field unless you know what you're doing.
 UserNS=keep-id:uid=65532,gid=65532
