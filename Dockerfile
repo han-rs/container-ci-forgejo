@@ -29,7 +29,7 @@ ARG https_proxy
 
 RUN set -e && \
     apk -U upgrade && apk add --no-cache \
-    ca-certificates=20251003-r0 \
+    ca-certificates=20260413-r0 \
     wget=1.25.0-r2
 
 ARG TARGETARCH=amd64
@@ -78,7 +78,7 @@ LABEL description="Third-party Forgejo Docker image" \
 RUN set -e && \
     apk -U upgrade && apk add --no-cache \
     bash=5.3.3-r1 \
-    ca-certificates=20251003-r0 \
+    ca-certificates=20260413-r0 \
     git=2.52.0-r0 \
     gnupg=2.4.9-r0 \
     openssh-client=10.2_p1-r0
