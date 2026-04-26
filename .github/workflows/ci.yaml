@@ -14,7 +14,7 @@ env:
   DOCKER_BUILDKIT_VERSION: "0.29.0"
   # Versions
   # These versions should be kept in sync with the ones in Dockerfile.
-  FORGEJO_VERSION: "14.0.4"
+  FORGEJO_VERSION: "15.0.0"
 
 jobs:
   build:

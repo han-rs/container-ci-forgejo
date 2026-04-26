@@ -10,7 +10,7 @@ ARG IMAGE_VCS_REF=00000000
 
 # Versions
 # These versions should be kept in sync with the ones in .github/workflows/ci.yaml.
-ARG FORGEJO_VERSION=14.0.4
+ARG FORGEJO_VERSION=15.0.0
 
 # Non-root user and group IDs
 ARG UID=65532
