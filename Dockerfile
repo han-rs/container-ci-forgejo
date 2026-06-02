@@ -80,6 +80,7 @@ RUN set -e && \
     bash=5.3.3-r1 \
     ca-certificates=20260413-r0 \
     git=2.52.0-r0 \
+    git-lfs=3.7.0-r9 \
     gnupg=2.4.9-r0 \
     openssh-client=10.2_p1-r0
 
