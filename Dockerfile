@@ -1,8 +1,8 @@
 # Simple wrapper over forgejo
 
 # Base image
-ARG ALPINE_BASE_VERSION=3.23.4
-ARG ALPINE_BASE_HASH=5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
+ARG ALPINE_BASE_VERSION=3.24.1
+ARG ALPINE_BASE_HASH=28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 
 # Image METADATA
 ARG IMAGE_BUILD_DATE=1970-01-01T00:00:00+00:00
@@ -29,8 +29,8 @@ ARG https_proxy
 
 RUN set -e && \
     apk -U upgrade && apk add --no-cache \
-    ca-certificates=20260413-r0 \
-    wget=1.25.0-r2
+    ca-certificates=20260611-r0 \
+    wget=1.25.0-r3
 
 ARG TARGETARCH=amd64
 
@@ -77,12 +77,12 @@ LABEL description="Third-party Forgejo Docker image" \
 
 RUN set -e && \
     apk -U upgrade && apk add --no-cache \
-    bash=5.3.3-r1 \
-    ca-certificates=20260413-r0 \
-    git=2.52.0-r0 \
+    bash=5.3.9-r1 \
+    ca-certificates=20260611-r0 \
+    git=2.54.0-r0 \
     git-lfs=3.7.1-r0 \
-    gnupg=2.4.9-r0 \
-    openssh-client=10.2_p1-r0
+    gnupg=2.4.9-r1 \
+    openssh-client=10.3_p1-r0
 
 RUN set -e \
     && \
