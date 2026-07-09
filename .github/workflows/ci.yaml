@@ -10,8 +10,8 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  DOCKER_BUILDX_VERSION: "0.33.0"
-  DOCKER_BUILDKIT_VERSION: "0.29.0"
+  DOCKER_BUILDX_VERSION: "0.34.1"
+  DOCKER_BUILDKIT_VERSION: "0.30.0"
   # Versions
   # These versions should be kept in sync with the ones in Dockerfile.
   FORGEJO_VERSION: "15.0.4"
